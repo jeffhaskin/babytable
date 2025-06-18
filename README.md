@@ -31,10 +31,14 @@ Phase 1 – MVP Features:
 - Create multiple tables
 - Add/edit/delete columns
 - Add/edit/delete rows
+- Add/edit/delete views
+- Per view: add/edit/delete filters
+- Per view: add/edit/delete sorts
 - Column types: text, number, date, single-select, checkbox, formula, linked-record (linking between tables or within the same table)
 - View as table
 - View as kanban (sortable by any single-select field)
 - Save data persistently (SQLite)
+- Per table: left-hand view list. Be able to organize views into folders and sub-folders.
 
 
 ###  RECOMMENDED PROJECT STRUCTURE
