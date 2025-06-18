@@ -13,11 +13,13 @@ Frontend:
 - UI Library: Tailwind CSS + Headless UI
 - State Management: React built-in state where possible; otherwise, Zustand.
 - Data Grid: AG Grid
+
 Backend:
 - Language: Node.js
 - API Design: REST
 - Auth: none. It's for personal use only, there will only ever be one user, on an offline local network, with no need for any kind of security.
-Database
+
+Database:
 - SQLite
 - Wrap it with an ORM: Prisma
 Self-Hosting:
