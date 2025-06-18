@@ -121,7 +121,7 @@ model Column {
   name      String
   type      String   // e.g., "text", "number", "linked-record", etc.
   linkedTo  String?  // If type is "linked-record", this is the linked Table ID
-  options   Json?    // for other column types
+  options   String?  // JSON string for other column types
   order     Int
 }
 
@@ -129,7 +129,7 @@ model Row {
   id        String   @id @default(cuid()) // This is the universal identifier
   tableId   String
   table     Table    @relation(fields: [tableId], references: [id])
-  data      Json     // columnId → value (text, number, or array of linked row ids)
+  data      String   // JSON string: columnId → value
 }
 ```
 
