@@ -1,0 +1,14 @@
+{
+  "name": "babytable",
+  "private": true,
+  "workspaces": ["client", "server"],
+  "scripts": {
+    "start:server": "ts-node server/index.ts",
+    "start:client": "vite --host",
+    "start": "concurrently \"npm run start:server\" \"npm run start:client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1"
+  }
+}
+

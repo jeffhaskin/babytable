@@ -1,6 +1,28 @@
 # babytable
 Basic self-hosted replacement for nocodb, airtable, etc.
 
+## Install & Run
+
+1. Install dependencies for both the server and client:
+
+   ```bash
+   npm install
+   ```
+
+2. Create the SQLite database and generate the Prisma client:
+
+   ```bash
+   cd server && npx prisma migrate dev --name init && cd ..
+   ```
+
+3. Start the backend and frontend together:
+
+   ```bash
+   npm start
+   ```
+
+   The Express API will run on `http://localhost:3000` and the React UI will be available on `http://localhost:5173`.
+
 
 ## Plan for development
 
