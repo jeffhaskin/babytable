@@ -21,7 +21,8 @@ Basic self-hosted replacement for nocodb, airtable, etc.
    npm start
    ```
 
-   The Express API will run on `http://localhost:3000` and the React UI will be available on `http://localhost:5173`.
+   The Express API will run on `http://localhost:3000` and the React UI will be
+   served from the `client` directory at `http://localhost:5173`.
 
 
 ## Plan for development
