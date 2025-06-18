@@ -15,7 +15,7 @@ import {
   deleteView,
   listViews,
   getViewRows,
-} from '../controllers/TableController';
+} from '../controllers/TableController.ts';
 
 const router = Router();
 
