@@ -10,7 +10,7 @@ import { useTables } from './hooks/useTables';
 function App() {
   const { selectedView } = useTables();
   return (
-    <div className="flex h-screen text-sm font-sans">
+    <div className="flex h-screen">
       <TableList />
       <ViewSidebar />
       <div className="flex-1 overflow-hidden">

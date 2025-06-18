@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useTables } from '../hooks/useTables';
+import { API_BASE } from '../lib/api';
 
 export default function ViewSidebar() {
   const {
@@ -11,7 +12,7 @@ export default function ViewSidebar() {
 
   useEffect(() => {
     if (!selectedTable) return;
-    fetch(`/tables/${selectedTable.id}/views`)
+    fetch(`${API_BASE}/tables/${selectedTable.id}/views`)
       .then((r) => r.json())
       .then(setViews);
   }, [selectedTable]);
@@ -26,21 +27,21 @@ export default function ViewSidebar() {
   });
 
   return (
-    <div className="p-2 border-r w-48 overflow-y-auto">
+    <div className="p-2 border-r border-gray-300 w-60 bg-white overflow-y-auto">
       <div className="flex justify-between items-center mb-2">
         <span className="font-bold">Views</span>
         <button
-          className="border px-1"
+          className="border px-2 bg-blue-500 text-white rounded"
           onClick={async () => {
             const name = prompt('View name?');
             if (!name) return;
-            const res = await fetch(`/tables/${selectedTable.id}/views`, {
+            const res = await fetch(`${API_BASE}/tables/${selectedTable.id}/views`, {
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ name, type: 'table', path: '' }),
             });
             const v = await res.json();
-            setViews([...views, v]);
+            setViews((prev) => [...prev, v]);
           }}
         >
           +
@@ -53,7 +54,7 @@ export default function ViewSidebar() {
             {items.map((v) => (
               <li key={v.id}>
                 <button
-                  className={`block w-full text-left px-1 rounded ${selectedView?.id === v.id ? 'bg-blue-100' : ''}`}
+                  className={`block w-full text-left px-1 rounded hover:bg-gray-100 ${selectedView?.id === v.id ? 'bg-blue-100' : ''}`}
                   onClick={() => setSelectedView(v)}
                 >
                   {v.name}
