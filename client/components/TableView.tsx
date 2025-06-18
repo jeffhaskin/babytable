@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTables } from '../hooks/useTables';
+import { API_BASE } from '../lib/api';
 
 export default function TableView() {
   const { selectedView } = useTables();
@@ -7,7 +8,7 @@ export default function TableView() {
 
   useEffect(() => {
     if (!selectedView) return;
-    fetch(`/tables/views/${selectedView.id}/rows`)
+    fetch(`${API_BASE}/tables/views/${selectedView.id}/rows`)
       .then((r) => r.json())
       .then(setData);
   }, [selectedView]);
@@ -17,11 +18,11 @@ export default function TableView() {
 
   return (
     <div className="p-4 overflow-auto">
-      <table className="min-w-full border">
+      <table className="min-w-full border bg-white shadow-sm">
         <thead>
           <tr>
             {data.columns.map((c) => (
-              <th key={c.id} className="border px-2 py-1 bg-gray-100">
+              <th key={c.id} className="border px-2 py-1 bg-gray-100 text-left">
                 {c.name}
               </th>
             ))}

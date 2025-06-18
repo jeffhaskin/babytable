@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTables } from '../hooks/useTables';
+import { API_BASE } from '../lib/api';
 
 export default function KanbanView() {
   const { selectedView } = useTables();
@@ -7,7 +8,7 @@ export default function KanbanView() {
 
   useEffect(() => {
     if (!selectedView) return;
-    fetch(`/tables/views/${selectedView.id}/rows`)
+    fetch(`${API_BASE}/tables/views/${selectedView.id}/rows`)
       .then((r) => r.json())
       .then(setData);
   }, [selectedView]);
