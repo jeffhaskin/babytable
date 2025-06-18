@@ -1,7 +1,10 @@
 {
   "name": "babytable",
   "private": true,
-  "workspaces": ["client", "server"],
+  "workspaces": [
+    "client",
+    "server"
+  ],
   "scripts": {
     "start:server": "ts-node server/index.ts",
     "start:client": "cd client && vite --host",
@@ -12,5 +15,8 @@
   },
   "prisma": {
     "schema": "server/prisma/schema.prisma"
+  },
+  "dependencies": {
+    "cors": "^2.8.5"
   }
 }
