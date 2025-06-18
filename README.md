@@ -9,10 +9,11 @@ Basic self-hosted replacement for nocodb, airtable, etc.
    npm install
    ```
 
-2. Create the SQLite database and generate the Prisma client:
+2. From the repository root, create the SQLite database and generate the Prisma
+   client:
 
    ```bash
-   cd server && npx prisma migrate dev --name init && cd ..
+   npx prisma migrate dev --name init --schema server/prisma/schema.prisma
    ```
 
 3. Start the backend and frontend together:
