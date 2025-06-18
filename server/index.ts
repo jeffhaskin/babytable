@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import tableRoutes from './routes/tableRoutes';
+import tableRoutes from './routes/tableRoutes.ts';
 
 const app = express();
 app.use(cors());

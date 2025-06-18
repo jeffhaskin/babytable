@@ -24,7 +24,7 @@ model Column {
   name     String
   type     String
   linkedTo String?
-  options  Json?
+  options  String?
   order    Int
 }
 
@@ -32,7 +32,7 @@ model Row {
   id      String   @id @default(cuid())
   tableId String
   table   Table    @relation(fields: [tableId], references: [id])
-  data    Json
+  data    String
 }
 
 model View {
@@ -42,7 +42,7 @@ model View {
   name        String
   type        String   // "table" or "kanban"
   path        String   // folder path like "root/sub"
-  filters     Json?
-  sorts       Json?
+  filters     String?
+  sorts       String?
   kanbanField String?
 }
